@@ -9,11 +9,11 @@ export const WEEK_DAYS = [
 ]
 
 export const EMPTY_WEEK = {
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
-    sunday: [],
+    monday: {},
+    tuesday: {},
+    wednesday: {},
+    thursday: {},
+    friday: {},
+    saturday: {},
+    sunday: {},
 }

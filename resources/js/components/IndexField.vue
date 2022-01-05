@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {getOpeningHoursData} from "../func";
+import {getOpeningHoursWeekData} from "../func"
 
 export default {
 
@@ -13,7 +13,7 @@ export default {
 
     data: function () {
         return {
-            ...getOpeningHoursData(this.field.value)
+            openingHours: getOpeningHoursWeekData(this.field.value),
         }
     },
 }

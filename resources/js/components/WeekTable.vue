@@ -26,10 +26,16 @@
 </template>
 
 <script>
-import {capitalizeFirstLetter} from "../func";
+import {capitalizeFirstLetter, getRandomTimeInterval} from "../func"
 
 export default {
-    props: ['openingHours', 'editable'],
+    props: ['value', 'editable'],
+
+    data() {
+        return {
+            openingHours: this.value,
+        }
+    },
 
     methods: {
         translateDayName(dayName) {
@@ -38,7 +44,7 @@ export default {
 
         addInterval(dayName) {
             let openingHoursForDay = this.openingHours[dayName] || []
-            openingHoursForDay.push("08:00-16:00")
+            openingHoursForDay.push(getRandomTimeInterval())
 
             this.openingHours[dayName] = openingHoursForDay
         },
