@@ -43,7 +43,7 @@ export default {
         },
 
         closed(dayName) {
-            this.openingHours[dayName] = ["Closed"];
+            this.openingHours[dayName] = [];
         },
     }
 }
