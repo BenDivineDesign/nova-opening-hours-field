@@ -11,16 +11,16 @@
                                    pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])-(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$"
                                    required
                             >
-                            <button class="btn btn-default btn-danger" @click.prevent="removeInterval(dayName, intervalIndex)">-</button>
+                            <!--<button class="btn btn-default btn-danger" @click.prevent="removeInterval(dayName, intervalIndex)">-</button>-->
                         </div>
                         <div v-else>{{ interval }}</div>
                     </div>
                 </div>
                 <div v-else>{{ __('Closed') }}</div>
             </td>
-            <td v-if="editable">
+            <!--<td v-if="editable">
                 <button class="btn btn-default btn-primary" @click.prevent="addInterval(dayName)">+</button>
-            </td>
+            </td>-->
         </tr>
     </table>
 </template>
@@ -38,7 +38,7 @@ export default {
 
         addInterval(dayName) {
             let openingHoursForDay = this.openingHours[dayName] || []
-            openingHoursForDay.push("08:00-16:00")
+            openingHoursForDay.push("00:00-23:59")
 
             this.openingHours[dayName] = openingHoursForDay
         },
