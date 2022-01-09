@@ -18,7 +18,7 @@
                 <div v-else>{{ __('Closed') }}</div>
             </td>
             <td v-if="editable">
-                <button class="btn btn-default btn-primary" @click.prevent="open247(dayName)">24/7</button>
+                <button class="btn btn-default btn-primary" @click.prevent="open24h(dayName)">24h</button>
             </td>
             <td v-if="editable">
                 <button class="btn btn-default btn-danger" @click.prevent="closed(dayName)">Closed</button>
@@ -38,7 +38,7 @@ export default {
             return this.__(capitalizeFirstLetter(dayName))
         },
 
-        open247(dayName) {
+        open24h(dayName) {
             this.openingHours[dayName] = ["00:00-23:59"];
         },
 
